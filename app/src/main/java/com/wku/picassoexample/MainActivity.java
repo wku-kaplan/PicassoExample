@@ -19,16 +19,15 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        final EditText keyword = (EditText) findViewById(R.id.input);
+//        final EditText keyword = (EditText) findViewById(R.id.input);
         final ImageView imageView = (ImageView) findViewById(R.id.imageView);
-        final String baseurl = "http://loremflickr.com/320/240/";
-        final Random r = new Random();
+        final String baseurl = "http://picsum.photos/320/240/?random";
 
         final Picasso p = Picasso.with(getApplicationContext());
 
         p.load(baseurl)
                 .placeholder(R.drawable.progress_animation)
-                .resize(320, 240)
+//                .resize(320, 240)
                 .into(imageView);
 
         Button button = (Button) findViewById(R.id.button);
@@ -37,8 +36,8 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View view) {
-                String url = baseurl + keyword.getText().toString() + "?random=" + i++;
-                p.load(url)
+//                String url = baseurl + keyword.getText().toString() + "?random=" + i++;
+                p.load(baseurl)
                         .placeholder(R.drawable.progress_animation)
                         .resize(320, 240)
                         .centerCrop()
